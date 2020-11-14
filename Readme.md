@@ -1,4 +1,4 @@
-Here are the codes for ATRAR Bot! Feel free to submit an issue or open a pull request!
+Here are the codes for ATRAR Premium Bot! Feel free to submit an issue or open a pull request!
 
 ## Self hosting
 This discord bot uses [Geschafft](https://geschafft.co/) and for its host and databases.

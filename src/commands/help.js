@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
 
 
   let embed = new Discord.MessageEmbed()
-    .setTitle("Help Page [Prefix `a`]")
+    .setTitle("Help Page [Prefix `Your Prefix`]")
     .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
     .addField("RolePlay Commands", "`hug` `cuddle` `kiss` `slap` `kill` `shoot` `airstrikePUBG` `airstrike` `happy` `highfive` `lick` `nom` `nuzzle` `poke` `sad` `stare`")
     .setDescription("Note: If you want to add some replies to the commands such as `oof, RIP`\n so join the bot support server and add your suggetion in the server and it will be added soon")

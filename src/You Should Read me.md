@@ -9,6 +9,8 @@ I give you this bot just to use it for your private use, Don't try to copy the b
 
 If you have any issus just make a request on the github and wait till I reply it
 
+To add your own prefix head to [botconfig](https://github.com/ItsFR0ST/ATRAR-Free/blob/main/src/botconfig.json)
+
 ```js
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);

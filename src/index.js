@@ -32,10 +32,9 @@ bot.on('ready', () => {
 
   setInterval(async () => {
     let statuslist = [
-      `a.help to show commands`,
-      `Thanks for buying the premium version`,
-      `Enjoy the full features of the bot`,
-      `Check the support server for your perks`
+      `msg1`,
+      `msg2`,
+      `msg3`
     ]
     const random = Math.floor(Math.random() * statuslist.length)
 
@@ -50,7 +49,7 @@ bot.on('ready', () => {
     let cmd = args.shift().toLowerCase();
     let commandfile;
 
-    if (message.guild.id === 'YourServerID') { /// if you want to add more just do **||** /// then copy and paste `if (message.guild.id === 'YourServerID')` to add another server
+    if (message.guild.id === 'YourServerID') { /// if you want to add more just do || then copy and paste `if (message.guild.id === 'YourServerID')` to add another server
       if (bot.commands.has(cmd)) {
         commandfile = bot.commands.get(cmd);
       } else if (bot.aliases.has(cmd)) {

@@ -76,4 +76,4 @@ bot.on('ready', () => {
     }
 
   })
-  bot.login('Nzc2NDcxMDcxNDQzNzc5NjM0.X61XCQ.aVtHa2bJR3M_pKQx-VWFmhdCdHM');
+  bot.login('Your-Token-Here');

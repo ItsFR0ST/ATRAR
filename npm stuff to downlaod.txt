@@ -1,0 +1,5 @@
+npm i discord.js
+npm i get
+npm i fs
+npm i ms
+npm i common-tags

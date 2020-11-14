@@ -50,7 +50,7 @@ bot.on('ready', () => {
     let cmd = args.shift().toLowerCase();
     let commandfile;
 
-    if (message.guild.id === '765619528368914432') {
+    if (message.guild.id === 'YourServerID') { /// if you want to add more just do **||** /// then copy and paste `if (message.guild.id === 'YourServerID')` to add another server
       if (bot.commands.has(cmd)) {
         commandfile = bot.commands.get(cmd);
       } else if (bot.aliases.has(cmd)) {

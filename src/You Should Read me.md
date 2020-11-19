@@ -11,6 +11,9 @@ If you have any issus just make a request on the github and wait till I reply it
 
 To add your own prefix head to [botconfig](https://github.com/ItsFR0ST/ATRAR-Free/blob/main/src/botconfig.json)
 
+
+ ***Because I am kinda lazy*** you gotta edit every command contains ```js     botFetch = client.users.cache.get('YourbotID')``` to your bot id so that will make it works if there's any errors with that dm me on discord `LoneFrosty#9026` and thx for using my bot files to make your own bot
+
 ```js
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online on ${bot.guilds.cache.size} servers!`);

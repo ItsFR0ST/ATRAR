@@ -1,7 +1,11 @@
-Here are the codes for ATRAR Premium Bot! Feel free to submit an issue or open a pull request!
+[![Discord Bots](https://top.gg/api/widget/status/732645141839609958.svg)](https://top.gg/bot/732645141839609958)
+[![Discord Bots](https://top.gg/api/widget/upvotes/732645141839609958.svg)](https://top.gg/bot/732645141839609958)
+[![Discord Bots](https://top.gg/api/widget/owner/732645141839609958.svg)](https://top.gg/bot/732645141839609958)
+
+Here are the codes for ATRAR Bot! Feel free to submit an issue or open a pull request!
 
 ## Self hosting
-This discord bot uses [Geschafft](https://geschafft.co/) and for its host and databases.
+This discord bot uses [Geschafft](https://geschafft.co/) for its host and databases.
 
 ## License
 ATRAR Bot is licensed under of our **terms**, License: CC-BY-NC-SA-4.0, Commercial use is not allowed under this license. This includes any kind of revenue made with or based upon the software, even donations.

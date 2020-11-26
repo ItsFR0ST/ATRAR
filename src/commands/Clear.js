@@ -5,7 +5,7 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message, args) => {
 
 
-    if (!args[0]) return message.reply(nospecs);
+    if (!args[0]) return message.reply('You havn\'t choose any number yet!');
     if (isNaN(args[0])) return message.reply("The amount parameter isn't a number!");
     if (args[0] > 100) return message.reply("You can't delete more than 100 messages at once!");
     if (args[0] < 1) return message.reply('You have to delete at least 1 message!');

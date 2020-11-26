@@ -5,10 +5,10 @@ module.exports.run = async (client, message, args) => {
 
 
     let subreddits = [  
-    '',
+    'https://thumbs.gfycat.com/AcademicLegalHoiho-small.gif',
     'https://gfycat.com/unlawfulfrailalbacoretuna',
     'https://gfycat.com/digitalwhoppingbrocketdeer',
-    ''
+    'https://gfycat.com/adorableyawningherculesbeetle'
     ]
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0])

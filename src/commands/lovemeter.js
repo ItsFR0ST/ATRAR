@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     let replies = [
     "**45%** :heart::heart::heart::heart::black_heart::black_heart::black_heart::black_heart: Pretty good.",
     "**5%** :heart::black_heart::black_heart::black_heart::black_heart::black_heart::black_heart::black_heart: Very Sad :cry:",
-    "**90%** :heart::heart::heart::heart::heart::heart:black_heart::black_heart: Perfect!",
+    "**90%** :heart::heart::heart::heart::heart::heart::black_heart::black_heart: Perfect!",
     "**95%** :heart::heart::heart::heart::heart::heart::heart::black_heart: Awesome!",
     "**100%**:heart::heart::heart::heart::heart::heart::heart::heart: No words to explain this :heart:",
     "**0%** :black_heart::black_heart::black_heart::black_heart::black_heart::black_heart::black_heart::black_heart: **RIP**",
@@ -16,13 +16,7 @@ module.exports.run = async (client, message, args) => {
 ];
     let result = Math.floor((Math.random() * replies.length));
 
-    const error = new Discord.MessageEmbed()
-    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))
-        .setColor('#FF0000')
-        .setDescription(`You Havn't Choose anyone yet, Please Choose a member by mentioning or using ID`)
-        .setFooter(`Version: 1.65`, botFetch.displayAvatarURL())
-        .setTimestamp()
-    if (!user) return message.channel.send(error)
+    if (!user) return message.reply('You Havn\'t Choose anyone yet, Please Choose a member by mentioning or using ID')
 
     const shipmeter = new Discord.MessageEmbed()
     .setTitle('Love Meter')

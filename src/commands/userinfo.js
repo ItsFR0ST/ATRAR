@@ -5,8 +5,7 @@ module.exports.run = async (client, message, args) => {
     botFetch = client.users.cache.get('732645141839609958')
 
     let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-    if (!user) return message.reply('You Must mention someone or yourself to see the userinfo!')
-    if(!user) user = message.author
+    if (!user) message.reply('You have to mention someone to see his userinfo or yours. ')
 
     const embed = new Discord.MessageEmbed()
         .setColor("RANDOM")

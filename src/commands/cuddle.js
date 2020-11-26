@@ -3,16 +3,12 @@ module.exports.run = async (client, message, args) => {
     botFetch = client.users.cache.get('732645141839609958')
 
     var subreddits = [
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        '',
-        ''
+        'https://cdn.weeb.sh/images/B1_e1gTXG.gif',
+        'https://cdn.weeb.sh/images/B1S1I87vZ.gif',
+        'https://cdn.weeb.sh/images/B1_e1gTXG.gif',
+        'https://cdn.weeb.sh/images/rk2-UL7PW.gif',
+        'https://cdn.weeb.sh/images/r1A77CZbz.gif',
+        'https://cdn.weeb.sh/images/Byd1IUmP-.gif'
     ]
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0])

@@ -7,8 +7,8 @@ module.exports.run = async (client, message, args) => {
     'https://cdn.weeb.sh/images/B1VnoJFDZ.gif',
     'https://cdn.weeb.sh/images/r11as1tvZ.gif',
     'https://cdn.weeb.sh/images/BJO2j1Fv-.gif',
-    'https://cdn.weeb.sh/images/HyXTiyKw-.gif'
-
+    'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
+    'https://cdn.discordapp.com/attachments/457503842980855849/771599479702028308/image1.gif'
     ]
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0])

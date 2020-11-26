@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
-  botFetch = client.users.cache.get('776471071443779634')
+  botFetch = client.users.cache.get('732645141839609958')
 
 
   let embed = new Discord.MessageEmbed()
@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
     .addField('Credits:', `Bot Creator & Owner | 1st Dev: LoneFrosty#9026\n
     Helper & Developer | 2nd Dev: Alexx!#5698\n
     __Support Discord server__: https://discord.gg/zQTKaw5\n 
-    __GitHub Source__: https://github.com/MrBotsSeller/atrar-premium`)
+    __GitHub Source__: https://github.com/ItsFR0ST/ATRAR`)
       .setColor("RANDOM")
     .setTimestamp()
     .setThumbnail(botFetch.displayAvatarURL())

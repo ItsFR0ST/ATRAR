@@ -3,12 +3,12 @@ const Discord = require("discord.js")
 
 
 module.exports.run = async (client, message, args) => {
-    botFetch = client.users.cache.get('776471071443779634')
+    botFetch = client.users.cache.get('732645141839609958')
 
-    let user = (message.guild.member(message.mentions.users.first()) || client.users.cache.get(args[0]) || message.author)   
+    let user = (message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[1]) || message.author)   
     let replies = ["Looks Good", "This epic an avatar", "Nice avatar", "This avatar is good", "Nice"];
     let result = Math.floor((Math.random() * replies.length));
-    if (!user === message.author) message.channel.send(embed);
+    if (!user.id === message.author) return  message.channel.send(embed)
 
     let embed = new Discord.MessageEmbed()
         .setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true }))

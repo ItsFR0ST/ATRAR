@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message, bot) => {
-    botFetch = client.users.cache.get('776471071443779634')
+    botFetch = client.users.cache.get('732645141839609958')
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
     totalSeconds %= 86400;

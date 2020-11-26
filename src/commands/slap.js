@@ -35,7 +35,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("RANDOM")
         .setDescription(`${message.author} slapped ${user},` + ` ${replies[result]}`) 
         .setImage(sub)
-        .setFooter(`ATRAR Version 1.64`, botFetch.displayAvatarURL());
+        .setFooter(`Version 1.65`, botFetch.displayAvatarURL());
 
     message.channel.send(embed);
 

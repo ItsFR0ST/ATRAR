@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
-    botFetch = client.users.cache.get('776471071443779634')
+    botFetch = client.users.cache.get('732645141839609958')
 
     var subreddits = [
         'https://cdn.discordapp.com/attachments/738628884152451072/773464302660616202/giphy.gif',

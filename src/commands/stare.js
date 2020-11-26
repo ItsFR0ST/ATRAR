@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
-    botFetch = client.users.cache.get('776471071443779634')
-
-    var sub = [
+    botFetch = client.users.cache.get('732645141839609958')
+    
+    var subreddits = [
         'https://cdn.weeb.sh/images/Sk5BOdQIG.gif',
         'https://cdn.weeb.sh/images/BknO81Kwb.gif',
         'https://cdn.weeb.sh/images/HJ6qUytDb.gif',

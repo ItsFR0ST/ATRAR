@@ -3,8 +3,7 @@ const Discord = require("discord.js")
 module.exports.run = async (client, message, args) => {
 
     let user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
-    
-    if(!user) return message.reply('Choose someone to **RickRoll** him \n Remember!! to use ID only just to rickroll someone without pinging him')
+    if(!user) return message.reply('Mention someone to **RickRoll** him')
     
 
 
@@ -14,9 +13,7 @@ module.exports.run = async (client, message, args) => {
         .setImage(`https://cdn.discordapp.com/attachments/358441505712635905/774256520153661440/SPOILER_tenor.gif`)
         .setColor("RANDOM")
         .setTimestamp()
-  user.send(embed);
-        message.delete();
-
+        user.send(embed);
 
 
 

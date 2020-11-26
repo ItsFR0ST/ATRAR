@@ -1,20 +1,22 @@
 
 module.exports.run = async (bot, message) => {
 
-    if (message.author.id != "541215388600500235") return message.channel.send("You're not the bot the owner!")
+
+    const noPermission = new Discord.MessageEmbed()
+        .setAuthor(message.author.username, message.author.displayAvatarURL())
+        .setDescription(':x: You are not the owner of the bot!')
+        .setTimestamp()
+        .setColor("RANDOM")
 
 
-    try {
-        await message.channel.send("Bot is shutting down...")
-        process.exit()
-    } catch (e) {
-        message.channel.send(`ERROR: ${e.message}`)
-    }
-
-
+    if (message.author.id != "541215388600500235") return message.channel.send(noPermission);
+    const msg = await message.channel.send("Shutingdown the bot....");
+    setTimeout(() => {
+        msg.delete()
+            .then(this.client.destroy())
+    }, 5000);
 
 }
-
 module.exports.help = {
     name: "shutdown",
     aliases: ["close, sleep"]

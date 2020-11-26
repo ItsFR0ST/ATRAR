@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
-    botFetch = client.users.cache.get('776471071443779634')
+    botFetch = client.users.cache.get('732645141839609958')
 
     let replies = [
         '60%',

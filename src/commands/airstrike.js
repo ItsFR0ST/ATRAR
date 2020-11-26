@@ -5,10 +5,7 @@ module.exports.run = async (client, message, args) => {
 
 
     let subreddits = [  
-    '',
-    '',
-    '',
-    ''
+    'https://cdn.discordapp.com/attachments/772898814138908752/776946905434947604/471289cde2490c80f60d5e85bcdfb6da.gif'
     ]
 
     let user = message.mentions.users.first() || client.users.cache.get(args[0])

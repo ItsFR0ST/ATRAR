@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 module.exports.run = async (client, message, args) => {
-    botFetch = client.users.cache.get('776471071443779634')
+    botFetch = client.users.cache.get('732645141839609958')
 
     var subreddits = [
         'https://i.imgur.com/r8BRNYz.gif',
@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
     let result = Math.floor((Math.random() * replies.length));
     let msgreplies = [`UWU`, `Ok`, `Do it with someone else.`, `Don't Poke me`]
     let remsg = Math.floor((Math.random() * msgreplies.length));
-    if (user.id === '776471071443779634') return message.channel.send(msgreplies[remsg])
+    if (user.id === '732645141839609958') return message.channel.send(msgreplies[remsg])
     let selfmsg = [`Why you choosed to nuzzle yourself?!`, `Man you should nuzzle someone.`, `UMMM`, `Very Weird`]
     let semsg = Math.floor((Math.random() * msgreplies.length));
     if (user === message.author) return message.channel.send(selfmsg[semsg])

@@ -38,7 +38,7 @@ module.exports.run = async (client, message) => {
         .addField('General', [
             `**» Name:** ${message.guild.name}\n
             **» ServerID:** ${message.guild.id}\n
-            **» Owner:** ${message.guild.owner.user.tag} **»OwnerID:** (${message.guild.ownerID})\n
+            **» Owner:** ${message.guild.owner.user.tag}\n **»OwnerID:** (${message.guild.ownerID})\n
             **» Region:** ${regions[message.guild.region]}\n
             **» Boost Count:** ${message.guild.premiumSubscriptionCount || '0'}\n
             **» Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}\n
@@ -53,7 +53,7 @@ module.exports.run = async (client, message) => {
         ])
             
         .setTimestamp()
-        .setFooter(`ATRAR Version: 1.64`, botFetch.displayAvatarURL())
+        .setFooter(`Version: 1.65`, botFetch.displayAvatarURL())
     message.channel.send(embed);
 
 };

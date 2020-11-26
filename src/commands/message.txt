@@ -1,0 +1,119 @@
+module.exports.run = async (bot, message, args, Discord) => {
+
+    const db = require('quick.db')
+    const ms = require('ms')
+    let user = message.mentions.users.first() || bot.users.cache.get(args[0])
+    let reason = args.slice(1).join(' ')
+    if(!reason) reason = 'Unspecified'
+
+    const noPermission = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> **You** lack the permission to use that!')
+    .setColor('FF0000')
+    if(!message.member.hasPermission("MANAGE_GUILD") || !message.member.hasPermission("MANAGE_ROLES")) return message.channel.send(noPermission)
+
+    const botNoPerms = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> **I** lack the permission to use that!')
+    if(!message.guild.me.hasPermission("MANAGE_GUILD") || !message.guild.me.hasPermission("MANAGE_ROLES")) return message.channel.send(botNoPerms)
+
+    const noSpec = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> Please specify a user to warn VIA mention or ID!')
+    .setColor('FF0000')
+    if(!user) return message.channel.send(noSpec)
+
+    const warnMe = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> You can\'t warn me!')
+    .setColor('FF0000')
+    if(user.id == '737478018318073928') return message.channel.send(warnMe)
+    
+
+    const warnBots = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> You can\'t warn bots!')
+    .setColor('FF0000')
+    if(user.bot) return message.channel.send(warnBots)
+
+    const warnSelf = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> You can\'t warn yourself!')
+    .setColor('FF0000')
+
+    const warnCreator = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> You can\'t warn my creator!')
+    .setColor('FF0000')
+
+    const roleHierarchy = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> **You** can\'t warn this user due to role hierarchy!')
+    .setColor('FF0000')
+
+    const botRoleHierarchy = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription('<:CrossMark:766877502584782879> **I** can\'t warn this user due to role hierarchy!')
+    .setColor('FF0000')
+
+    const warnDmEmbed = new Discord.MessageEmbed()
+    .setDescription(`You were warned from **${message.guild.name}**\n**Moderator:** ${message.author.tag}\n**Reason:** \`${reason}\``)
+    .setColor('FF0000')
+
+    const warnEmbed = new Discord.MessageEmbed()
+    .setAuthor(message.author.username, message.author.displayAvatarURL({ dynamic: true }))
+    .setDescription(`<:CheckMark:766877731718955038> ${user} was successfully warned.`)
+    .setColor('00FF00')
+
+    const threeInfractionsDm = new Discord.MessageEmbed()
+    .setDescription(`From **${message.guild.name}**\nYou\'ve reached 3 infractions!\nYou have been muted for 30 minutes for reaching 3 infractions!`)
+    .setColor('FF0000')
+
+    const threeInfractionsEmbed = new Discord.MessageEmbed()
+    .setDescription(`${user} has reached 3 infractions!\nThis user has been muted for 30 minutes for reaching 3 infractions!`)
+    .setColor('FF0000')
+
+    user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
+    if(!user) return message.channel.send(noSpec)
+    let muteRole = message.guild.roles.cache.get('768063575289233439')
+    let botFetch = message.guild.members.cache.get('737478018318073928')
+    let userHighestRole = user.roles.highest
+    let authorHighestRole = message.member.roles.highest
+    let botHighestRole = botFetch.roles.highest
+    let warnings = db.get(`warnings_${message.guild.id}_${user.id}`)
+
+    if(user.id == message.author.id) return message.channel.send(warnSelf)
+    if(user.id == '514720382779916318') return message.channel.send(warnCreator)
+    if(userHighestRole.comparePositionTo(authorHighestRole) > 0) return message.channel.send(roleHierarchy)
+    if(userHighestRole.equals(authorHighestRole)) return message.channel.send(roleHierarchy)
+    if(userHighestRole.comparePositionTo(botHighestRole) > 0) return message.channel.send(botRoleHierarchy)
+    if(userHighestRole.equals(botHighestRole)) return message.channel.send(botRoleHierarchy)
+    
+    if(warnings == null){
+        db.set(`warnings_${message.guild.id}_${user.id}`, 1)
+        user.send(warnDmEmbed)
+        await message.channel.send(warnEmbed)
+    }
+
+    if(warnings != null){
+        db.add(`warnings_${message.guild.id}_${user.id}`, 1)
+        user.send(warnDmEmbed)
+        await message.channel.send(warnEmbed)
+    }
+
+    if(warnings == '2'){
+        if(!muteRole) return
+        user.roles.add(muteRole)
+        user.send(threeInfractionsDm)
+        await message.channel.send(threeInfractionsEmbed)
+    }
+
+    setTimeout(function(){
+        user.roles.remove(muteRole)
+    }, ms('30m'))
+}
+
+module.exports.help = {
+    name: 'warn',
+    aliases: ['warn']
+}
